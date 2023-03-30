@@ -1,10 +1,12 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer #drawer mode="side" opened>
-    <a routerLink="/home">Home</a><br>
-    <a routerLink="/client">Client</a>
+  <mat-drawer #drawer mode="side">
+    <button routerLink="/home" mat-button>HOME</button><br>
+    <button routerLink="/client" mat-button>CLIENT</button>
   </mat-drawer>  
   <div>
-    <button mat-raised-button (click)="drawer.toggle()">Show/Hide</button>
+    <button mat-icon-button color="accent" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
     <router-outlet></router-outlet>
   </div>
 </mat-drawer-container>
