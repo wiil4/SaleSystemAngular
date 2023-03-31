@@ -8,3 +8,7 @@
 /*table{
     width: auto;
 }*/
+
+.delete :hover{
+    color: #755285;
+}

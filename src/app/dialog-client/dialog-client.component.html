@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>New User</h1>
+<h1 mat-dialog-title>{{client!=null?'Edit User':'New User'}}</h1>
 <div mat-dialog-content>
     <p>Insert name</p>
     <mat-form-field appearance="fill">
@@ -8,5 +8,6 @@
 </div>
 <div mat-dialog-actions>
     <button mat-raised-button color="warn" (click)="close()">Cancel</button>
-    <button [disabled]="name == null" mat-raised-button color="accent" (click)="addClient()">Insert</button>
+    <button [disabled]="name == null" mat-raised-button color="accent" 
+    (click)="client!=null ? updateClient(): addClient()">{{client!=null ? 'Update':'Insert'}}</button>
 </div>

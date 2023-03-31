@@ -16,6 +16,14 @@
             <th mat-header-cell *matHeaderCellDef> Name </th>
             <td mat-cell *matCellDef="let element"> {{element.name}} </td>
         </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let element">
+                <button (click)="openEdit(element)" mat-raised-button color="basic">Update</button> | 
+                <button (click)="openDelete(element.id)" mat-raised-button color="warn">Delete</button>                              
+            </td>
+        </ng-container>
     
         <tr mat-header-row *matHeaderRowDef="columnName"></tr>
         <tr mat-row *matRowDef="let row; columns: columnName;"></tr>
