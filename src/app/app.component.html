@@ -1,13 +1,15 @@
-<mat-drawer-container class="example-container">
-  <mat-drawer #drawer mode="side">
+<mat-drawer-container class="container" hasBackdrop="false">
+  <mat-drawer #drawer mode="push">
     <button routerLink="/home" mat-button>HOME</button><br>
     <button routerLink="/client" mat-button>CLIENT</button>
   </mat-drawer>  
-  <div>
-    <button mat-icon-button color="accent" (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <router-outlet></router-outlet>
-  </div>
+  <mat-drawer-content>
+    <div>
+      <button mat-icon-button color="accent" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>  
 </mat-drawer-container>
 

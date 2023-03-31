@@ -1,3 +1,9 @@
+
+mat-drawer-content{
+    padding: 12px;
+    display: block;
+    align-items: flex-start;
+}
 mat-drawer{
-    background-color: darkgray;
+  padding: 20px;
 }

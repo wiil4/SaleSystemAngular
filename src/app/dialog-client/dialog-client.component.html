@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>New User</h1>
+<div mat-dialog-content>
+    <p>Insert name</p>
+    <mat-form-field appearance="fill">
+        <mat-label>Please Add Name</mat-label>
+        <input matInput type="text" [(ngModel)]="name">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="close()">Cancel</button>
+    <button [disabled]="name == null" mat-raised-button color="accent" (click)="addClient()">Insert</button>
+</div>

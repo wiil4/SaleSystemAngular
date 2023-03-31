@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ApiClientService } from '../services/api-client.service';
 import { Response } from '../models/response';
+import { DialogClientComponent } from '../dialog-client/dialog-client.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-client',
@@ -9,9 +11,11 @@ import { Response } from '../models/response';
 })
 export class ClientComponent {
   //lst!: any[];
-  dataSource!: Response[];
+  clientsData!: Response[];
   columnName: string[] = ['id','name'];
-  constructor(private _apiClient: ApiClientService){    
+
+  constructor(private _apiClient: ApiClientService,
+    public dialog:MatDialog){    
   }
 
   ngOnInit():void{
@@ -20,9 +24,19 @@ export class ClientComponent {
 
   getClients(){
     this._apiClient.getClient().subscribe(response =>{
-      console.log(response);
+      //console.log(response);
       //this.lst = response.data;
-      this.dataSource = response.data;
+      this.clientsData = response.data;
+    });
+  }
+  
+  openAdd(){
+    const dialogRef = this.dialog.open(DialogClientComponent,{
+      width: '300',
+      height: '350'
+    });
+    dialogRef.afterClosed().subscribe(result =>{
+      this.getClients();
     });
   }
 }

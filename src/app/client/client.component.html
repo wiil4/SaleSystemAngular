@@ -1,8 +1,12 @@
 <!--<div *ngFor="let el of lst">
     {{el.name}}
 </div>-->
+
 <div class="container">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z11">
+    <div>
+        <button (click)="openAdd()" mat-raised-button color="primary">ADD</button>
+    </div><br>
+    <table mat-table [dataSource]="clientsData" class="mat-elevation-z11">
         <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef> # </th>
             <td mat-cell *matCellDef="let element"> {{element.id}} </td>
