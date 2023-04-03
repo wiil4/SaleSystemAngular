@@ -22,11 +22,12 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 
 //HTTP
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 //Modules
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { JwtInterceptor } from './Security/jwt.interceptor';
 
 
 
@@ -54,7 +55,9 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
