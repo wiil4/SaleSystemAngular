@@ -4,14 +4,16 @@ import { Observable } from 'rxjs';
 import { Client } from '../models/client';
 import {Response} from '../models/response';
 
-const httpOption ={
+const httpOptions ={
   Headers: new HttpHeaders({
     'Content-Type':'application/json'
   })
-}
+};
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiClientService {
 
   url: string = 'https://localhost:7044/';

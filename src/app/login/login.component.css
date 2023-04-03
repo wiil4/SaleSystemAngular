@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-card-title{
+    text-align: center;
+}

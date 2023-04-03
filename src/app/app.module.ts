@@ -19,12 +19,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
 
 //HTTP
 import {HttpClientModule} from '@angular/common/http';
 
 //Modules
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -34,7 +36,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     ClientComponent,
     DialogClientComponent,
-    DialogDeleteComponent
+    DialogDeleteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatInputModule,
     MatSnackBarModule,
+    MatCardModule,
     FormsModule,
     HttpClientModule
   ],

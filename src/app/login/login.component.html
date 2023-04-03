@@ -1,0 +1,21 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title>Welcome</mat-card-title><br>
+        <mat-card-content>
+            <p>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input type="text" [(ngModel)]="email" matInput>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input type="password" [(ngModel)]="password" matInput>
+                </mat-form-field>
+            </p>
+    
+            <button (click)="login()" mat-raised-button color="primary" cdkFocusInitial>Login</button>
+        </mat-card-content>
+    </mat-card>
+</div>
